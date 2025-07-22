@@ -1,0 +1,470 @@
+/* VibeCheckTravel.com Global Styles */
+:root {
+  --font-sans: 'Inter', Arial, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-bg: #f7f5f2;
+  --color-text: #2d2d2d;
+  --color-accent-beach: #ffe5c2;
+  --color-accent-city: #d1e7ff;
+  --color-accent-mountain: #e0f7ef;
+  --color-accent-party: #ffe0f0;
+  --color-accent-artsy: #fff7d6;
+  --color-accent-history: #f5e6e0;
+  --color-primary: #ff8c42;
+  --color-nav-bg: #fff;
+  --color-nav-shadow: rgba(0,0,0,0.07);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after { box-sizing: inherit; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.about-bg {
+  background: linear-gradient(135deg, #f9f8f6 0%, #f3f0e9 100%);
+  position: relative;
+  z-index: 1;
+}
+body.about-bg::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 245, 230, 0.45) 0%, rgba(220, 230, 255, 0.28) 50%, rgba(210, 210, 255, 0.22) 100%);
+  background-color: #f6f7fa;
+  background-size: 180% 180%;
+  background-position: 70% 30%;
+  animation: aboutBgAnim 38s ease-in-out infinite alternate;
+  /* border: 2px solid red; */ /* Uncomment for debugging overlay */
+}
+
+body.about-bg::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 245, 230, 0.45) 0%, rgba(220, 230, 255, 0.28) 50%, rgba(210, 210, 255, 0.22) 100%);
+  background-color: #f6f7fa;
+  background-size: 180% 180%;
+  background-position: 70% 30%;
+  animation: aboutBgAnim 38s ease-in-out infinite alternate;
+}
+@keyframes aboutBgAnim {
+  0% { background-position: 60% 40%; }
+  100% { background-position: 40% 60%; }
+}
+
+
+body.vibe-beach {
+  background: linear-gradient(135deg, #f9f6f2 0%, #ffe5c2 100%);
+  position: relative;
+}
+body.vibe-beach::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(255, 236, 210, 0.27) 0%, rgba(210, 236, 255, 0.18) 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  animation: vibeBeachBg 24s ease-in-out infinite alternate;
+}
+@keyframes vibeBeachBg {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 53%; }
+}
+body.vibe-city {
+  background: linear-gradient(135deg, #f7faff 0%, #d1e7ff 100%);
+  position: relative;
+}
+body.vibe-city::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(209,231,255,0.32) 0%, rgba(140,180,255,0.22) 100%);
+  background-color: #e3f0ff;
+  background-size: 200% 200%;
+  background-position: 0% 55%;
+  animation: vibeCityBg 22s ease-in-out infinite alternate;
+}
+@keyframes vibeCityBg {
+  0% { background-position: 0% 55%; }
+  100% { background-position: 100% 45%; }
+}
+body.vibe-mountain {
+  background: linear-gradient(135deg, #f6fbf8 0%, #e0f7ef 100%);
+  position: relative;
+}
+body.vibe-mountain::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(224,247,239,0.18) 0%, rgba(200,240,220,0.13) 100%);
+  background-size: 200% 200%;
+  background-position: 50% 0%;
+  animation: vibeMountainBg 28s ease-in-out infinite alternate;
+}
+@keyframes vibeMountainBg {
+  0% { background-position: 50% 0%; }
+  100% { background-position: 47% 100%; }
+}
+body.vibe-artsy {
+  background: linear-gradient(135deg, #fffdf6 0%, #fff7d6 100%);
+  position: relative;
+}
+body.vibe-artsy::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(255,247,214,0.18) 0%, rgba(255,255,246,0.13) 100%);
+  background-size: 200% 200%;
+  background-position: 40% 0%;
+  animation: vibeArtsyBg 26s ease-in-out infinite alternate;
+}
+@keyframes vibeArtsyBg {
+  0% { background-position: 40% 0%; }
+  100% { background-position: 60% 100%; }
+}
+body.vibe-history {
+  background: linear-gradient(135deg, #f9f7f6 0%, #f5e6e0 100%);
+  position: relative;
+}
+body.vibe-history::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(245,230,224,0.16) 0%, rgba(255,255,255,0.10) 100%);
+  background-size: 200% 200%;
+  background-position: 60% 0%;
+  animation: vibeHistoryBg 30s ease-in-out infinite alternate;
+}
+@keyframes vibeHistoryBg {
+  0% { background-position: 60% 0%; }
+  100% { background-position: 40% 100%; }
+}
+
+/* === INTERACTIVE HOMEPAGE BACKGROUND === */
+.interactive-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  display: flex;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-slice {
+  flex: 1 1 20%;
+  height: 100%;
+  transition: flex-basis 0.7s cubic-bezier(.77,0,.18,1), filter 0.5s, z-index 0s 0.7s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.7) blur(0.2px);
+  z-index: 0;
+}
+.bg-chillbeachvibes { background-image: url('homepageP/chillbeachvibes.jpg'); }
+.bg-cityhustle { background-image: url('homepageP/cityhustle.jpg'); }
+.bg-mountainzen { background-image: url('homepageP/mountainzen.jpg'); }
+.bg-artsyescape { background-image: url('homepageP/artsyescape.jpg'); }
+.bg-historicalfeels { background-image: url('homepageP/historicalfeels.jpg'); }
+
+.interactive-bg.active .bg-slice {
+  pointer-events: auto;
+}
+.bg-slice.expanded {
+  flex-basis: 100% !important;
+  z-index: 2;
+  filter: brightness(1) blur(0);
+}
+.bg-slice.dimmed {
+  filter: brightness(0.4) blur(1.5px);
+  z-index: 1;
+}
+/* Overlay to ensure text is always readable */
+.interactive-bg::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(255,255,255,0.44);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Ensure homepage content is always above bg */
+.hero, .navbar {
+  position: relative;
+  z-index: 10;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--color-nav-bg);
+  box-shadow: 0 2px 8px var(--color-nav-shadow);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+}
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.nav-links li a:hover {
+  color: var(--color-primary);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+}
+.hero-bg {
+  display: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #2d2d2d;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.10);
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+  color: #fff;
+  /* Strong outline using multiple text-shadows */
+  text-shadow:
+    -2px -2px 0 #222,
+    2px -2px 0 #222,
+    -2px 2px 0 #222,
+    2px 2px 0 #222,
+    0 2px 8px rgba(0,0,0,0.18),
+    0 1px 4px rgba(0,0,0,0.14);
+}
+.subheading {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  /* Strong outline using multiple text-shadows */
+  text-shadow:
+    -2px -2px 0 #222,
+    2px -2px 0 #222,
+    -2px 2px 0 #222,
+    2px 2px 0 #222,
+    0 2px 8px rgba(0,0,0,0.18),
+    0 1px 4px rgba(0,0,0,0.14);
+}
+.vibe-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.vibe-tile {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 2px 8px var(--color-nav-shadow);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  min-width: 180px;
+  min-height: 110px;
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+  color: var(--color-text);
+  border: 3px solid transparent;
+}
+.vibe-tile .emoji {
+  font-size: 2.2rem;
+}
+.vibe-tile:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(255,140,66,0.12);
+  border-color: var(--color-primary);
+}
+.vibe-tile.beach { background: var(--color-accent-beach); }
+.vibe-tile.city { background: var(--color-accent-city); }
+.vibe-tile.mountain { background: var(--color-accent-mountain); }
+.vibe-tile.party { background: var(--color-accent-party); }
+.vibe-tile.artsy { background: var(--color-accent-artsy); }
+.vibe-tile.history { background: var(--color-accent-history); }
+
+main.vibe {
+  padding: 2.5rem 1rem 3rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.vibe-header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+.vibe-header p {
+  font-size: 1.15rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+.destinations {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.destination {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px var(--color-nav-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+.destination:hover {
+  box-shadow: 0 8px 32px rgba(255,140,66,0.13);
+}
+.destination img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+.destination-info {
+  padding: 1.5rem 2rem 1.5rem 2rem;
+}
+.destination-info h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin: 0 0 0.4rem 0;
+}
+.destination-info p {
+  margin: 0.3rem 0 0.8rem 0;
+  font-size: 1rem;
+}
+.best-time {
+  font-size: 0.98rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.moodboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+}
+.moodboard img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem 3rem 1rem;
+  text-align: center;
+}
+.about-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.about-hero p {
+  font-size: 1.15rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+.about-moodboard {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-moodboard img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-nav-shadow);
+}
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2.1rem; }
+  .vibe-header h1 { font-size: 1.5rem; }
+  .destination img { height: 180px; }
+  .destination-info { padding: 1.1rem 1rem; }
+}
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; height: auto; padding: 0.5rem 1rem; }
+  .nav-links { flex-wrap: wrap; gap: 0.7rem; }
+  .hero { min-height: 380px; }
+  .hero-content { padding: 1rem 0.2rem; }
+  .vibe-tiles { gap: 1rem; }
+  .vibe-tile { min-width: 120px; font-size: 1rem; padding: 1.2rem 0.7rem 1rem 0.7rem; }
+  main.vibe { padding: 1.2rem 0.2rem 2rem 0.2rem; }
+  .destination img { height: 120px; }
+  .moodboard img { height: 60px; }
+  .about-moodboard img { width: 80px; height: 50px; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1) both;
+}
